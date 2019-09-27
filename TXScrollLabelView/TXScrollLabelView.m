@@ -446,7 +446,7 @@ typedef NS_ENUM(NSInteger, TXScrollLabelType) {
     __block CGFloat labelW = 0;//label宽度，有待计算
     self.contentOffset = CGPointZero;
     [self setupLRUDTypeLayoutWithMaxSize:CGSizeMake(labelMaxW, labelMaxH) width:labelW height:labelH completedHandler:^(CGSize size) {
-        labelW = MAX(size.width, self.tx_width);
+        labelW = size.width;
         //开始布局
         self.upLabel.frame = CGRectMake(_scrollInset.left, 0, labelW, labelH);
         //由于 TXScrollLabelViewTypeLeftRight\UpDown 类型 X\Y 值均不一样，此处不再block中处理！
